@@ -14,5 +14,11 @@ module.exports = {
   },
   "features": {
     "storyStoreV7": true
+  },
+  //para o github conseguir chamar o link
+  viteFinal: (config, { configType }) => {
+    if (configType == 'PRODUCTION'){
+      config.base = '/rs_il_Figma_ao_React'
+    }
   }
 }
