@@ -17,8 +17,9 @@ module.exports = {
   },
   //para o github conseguir chamar o link
   viteFinal: (config, { configType }) => {
-    if (configType == 'PRODUCTION'){
-      config.base = '/rs_il_Figma_ao_React'
+    if (configType === 'PRODUCTION') {
+      config.base = '/s_il_Figma_ao_React/'
     }
+    return config
   }
 }
