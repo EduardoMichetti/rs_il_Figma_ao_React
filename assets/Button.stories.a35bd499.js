@@ -1,0 +1,2 @@
+import{B as t}from"./Button.827a5208.js";import"./index.module.bf8ce91f.js";import"./index.5cde391f.js";import"./iframe.e591aab3.js";import"./clsx.m.256e9345.js";import"./jsx-runtime.61f74709.js";const s={title:"Components/Button",component:t,args:{children:"Clique aqui."},argTypes:{}},m={},a=["Default"];export{m as Default,a as __namedExportsOrder,s as default};
+//# sourceMappingURL=Button.stories.a35bd499.js.map
