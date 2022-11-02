@@ -7,19 +7,22 @@ export interface TextProps{
                             //o sm aqui é o xs global e assim por diante
     children: ReactNode; //string; //desta forma ele pode receber qualquer tipo, string, componente...
     asChild?: boolean; 
+    className?: string;
 }
 
-export function Text({ size = 'md', children, asChild }: TextProps){ //quando não informar nada vai usar o md como padrão
+export function Text({ size = 'md', children, asChild, className }: TextProps){ //quando não informar nada vai usar o md como padrão
     const Comp = asChild ? Slot : 'span'; //caso esteja recebendo asChild vou usar slot, se não usa o span
     return (
         <Comp 
             className={clsx(
                 'text-cinza-100 font-sans',
                 {
-                    'text-xs': size == 'sm',
-                    'text-sm': size == 'md',
-                    'text-md': size == 'lg',
-                }
+                    //buscando do arquivo de configuração do tailwind
+                    'text-xs': size == 'sm', //14
+                    'text-sm': size == 'md', //16
+                    'text-md': size == 'lg', //18
+                },
+                className,
             )}
             >
                 {children}

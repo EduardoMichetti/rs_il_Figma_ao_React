@@ -7,19 +7,22 @@ export interface HeadingProps{
                             //o sm aqui é o xs global e assim por diante
     children: ReactNode; //string; //desta forma ele pode receber qualquer tipo, string, componente...
     asChild?: boolean; 
+    className?: string;
 }
 
-export function Heading({ size = 'md', children, asChild }: HeadingProps){ //quando não informar nada vai usar o md como padrão
+export function Heading({ size = 'md', children, asChild, className }: HeadingProps){ //quando não informar nada vai usar o md como padrão
     const Comp = asChild ? Slot : 'h2'; //caso esteja recebendo asChild vou usar slot, se não usa o span
     return (
         <Comp 
             className={clsx(
                 'text-cinza-100 font-bold font-sans',
                 {
-                    'text-lg': size == 'sm',
-                    'text-xl': size == 'md',
-                    'text-2xl': size == 'lg',
-                }
+                    //buscando do arquivo de configuração do tailwind
+                    'text-lg': size == 'sm', //20
+                    'text-xl': size == 'md', //24
+                    'text-2xl': size == 'lg', //32
+                },
+                className,
             )}
             >
                 {children}
